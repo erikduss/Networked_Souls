@@ -55,7 +55,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 470198715810512257}
-  m_LocalRotation: {x: -0, y: 0.99942344, z: -0, w: 0.0339536}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.0706999, y: 1.0706999, z: 1.0706999}
   m_ConstrainProportionsScale: 0
@@ -47889,7 +47889,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5141387463768987063}
-  m_LocalRotation: {x: -0, y: 0.99942344, z: -0, w: 0.0339536}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.0706999, y: 1.0706999, z: 1.0706999}
   m_ConstrainProportionsScale: 0
@@ -48397,6 +48397,8 @@ GameObject:
   - component: {fileID: 2610028167278047851}
   - component: {fileID: 8005042125403141410}
   - component: {fileID: -2247516724813827955}
+  - component: {fileID: -5776226094217108612}
+  - component: {fileID: -2178375840483864606}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -48469,6 +48471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcb46834c59a4b54498328f3f5bda1f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterController: {fileID: -5776226094217108612}
 --- !u!114 &-2247516724813827955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48481,6 +48484,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38b33a563333b484992a71efc49d1464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  verticalMovement: 0
+  horizontalMovement: 0
+  moveAmount: 0
+  walkingSpeed: 2
+  runningSpeed: 5
+  rotationSpeed: 15
+--- !u!143 &-5776226094217108612
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7883420388067512447}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 1.9
+  m_Radius: 0.23
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.95, z: 0}
+--- !u!114 &-2178375840483864606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7883420388067512447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13497c1db22ec10499e880e183f1c721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  networkPosition:
+    m_InternalValue: {x: 0, y: 0, z: 0}
+  networkRotation:
+    m_InternalValue: {x: 0, y: 0, z: 0, w: 1}
+  networkPositionVelocity: {x: 0, y: 0, z: 0}
+  networkPositionSmoothTime: 0.1
+  networkRotationSmoothTime: 0.1
 --- !u!1 &7963021266372608932
 GameObject:
   m_ObjectHideFlags: 0
