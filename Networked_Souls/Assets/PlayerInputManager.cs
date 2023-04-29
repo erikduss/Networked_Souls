@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerInputManager : MonoBehaviour
 {
     public static PlayerInputManager instance;
-
+    public PlayerManager player;
     PlayerControls playerControls;
 
     [Header("Movement input")]
@@ -114,6 +114,12 @@ public class PlayerInputManager : MonoBehaviour
         {
             moveAmount = 1f;
         }
+
+        //Passing 0 on the horizontal because we only want non strafing movement
+        //Strafing is only used for locking on.
+        if (player == null)
+            return;
+        player.playerAnimatorManager.UpdateAnimatorMovementParameters(0, moveAmount);
     }
 
     private void HandleCameraMovementInput()
